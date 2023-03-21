@@ -1,0 +1,33 @@
+.tarde {
+    display: flex;
+    justify-content: center;
+    &__container {
+        width: 60%;
+        background-color: #2c2e35;
+        // height: 100vh;
+
+        &__img {
+            display: flex;
+            justify-content: end;
+            & img {
+                position: absolute;
+            }
+        }
+        &__list{
+            color: white;
+            margin-left: 8rem;
+            margin-top: 14rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .tarde {
+        &__container {
+            width: 100%;
+        }
+    
+    }
+}

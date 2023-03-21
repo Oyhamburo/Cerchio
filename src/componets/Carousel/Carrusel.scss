@@ -1,0 +1,11 @@
+.car {
+    height: 800px;
+    width: 1200px;
+}
+
+@media (max-width: 1024px) {
+    .car {
+        height: auto;
+        width: auto;
+    }
+}

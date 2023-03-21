@@ -1,0 +1,53 @@
+.cena {
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 60%;
+        background-color: #2c2e35;
+        // height: 100vh;
+
+        &__img {
+            display: flex;
+            justify-content: end;
+
+            & img {
+                position: absolute;
+            }
+        }
+
+        &__list {
+            color: white;
+            margin-left: 8rem;
+            margin-top: 14rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .cena {
+        &__container {
+            width: 100%;
+
+            &__img {
+                display: flex;
+                justify-content: end;
+
+                & img {
+                    z-index: -1;
+                    position: absolute;
+                }
+            }
+
+            &__list {
+                color: white;
+                margin-left: 0rem;
+                margin-top: 1rem;
+                font-size: 1.4rem;
+            }
+        }
+
+    }
+}

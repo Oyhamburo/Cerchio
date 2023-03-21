@@ -1,0 +1,57 @@
+.plato{
+    display: flex;
+    &__precio{
+        margin-right: 4rem;
+    }
+    & img{
+        width: 30px;
+    }
+    margin: 2rem 0;
+    align-items: center;
+    &__descripcion{
+        font-size: 1rem;
+    }
+}
+.listarPlatos{
+    margin: 5rem 0;
+    & h2 {
+        font-size: 2.5rem;
+    }
+    &__container{
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .plato{
+        display: flex;
+        border-bottom: 1px solid;
+        margin: 2rem 0.8rem 2rem 0;
+        align-items: start;
+        &__precio{
+            margin-right: 0rem;
+        }
+        & img{
+            width: 30px;
+        }
+        &__nombre{
+            font-size: 1.7rem !important;
+        }
+        &__descripcion{
+            font-size: 1rem;
+        }
+        & div{
+            margin: 3px 0px;
+        }
+    }
+    .listarPlatos{
+        margin: 5rem 0;
+        & h2 {
+            font-size: 2.5rem;
+            margin-left: 1rem;
+        }
+        &__container{
+            margin-left: 1.5rem;
+        }
+    }
+}

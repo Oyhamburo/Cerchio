@@ -1,0 +1,69 @@
+.footer {
+    background-color: black;
+    padding: 1rem 1rem 3rem 1rem;
+
+    & div {
+        background-color: black;
+    }
+
+    & a {
+        background-color: black;
+        margin-left: 3px;
+        font-size: 20px;
+        color: #6583FF;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &__top {
+        padding: 1rem 7rem;
+        display: flex;
+        justify-content: space-between;
+
+        &__left {
+            & div {
+                color: white;
+            }
+        }
+
+        & img {
+            width: auto;
+            height: 35px;
+            background-color: black;
+        }
+    }
+
+    &__bot {
+        display: flex;
+        justify-content: center;
+        color: white;
+
+        & div {
+            font-size: 20px;
+        }
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .footer {
+        padding: 1rem 1rem 3rem 1rem;
+
+        &__top {
+            padding: 1rem 1rem;
+
+        }
+        &__bot {
+            margin: 1rem 0rem;
+        }
+    }
+
+
+
+
+}

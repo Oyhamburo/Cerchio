@@ -1,0 +1,139 @@
+.editlistarPlatos {
+    margin: 5rem 0;
+
+    & h2 {
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+
+        & button {
+            color: white;
+            background-color: black;
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: 0px;
+            border-radius: 1rem;
+            margin-left: 1rem;
+
+            &:hover {
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__input {
+        padding: 0.5rem 0rem;
+        font-size: 1.5rem;
+    }
+
+    &__container {
+        margin-left: 1.5rem;
+    }
+}
+
+.formulario {
+    display: flex;
+    // flex-direction: row !important;
+    padding: 1rem;
+    & button {
+        margin: 5px;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: black;
+        color: white;
+    }
+}
+
+.plato {
+    &__precio {
+        display: flex;
+
+        & button {
+            background-color: black;
+            color: white;
+            font-size: 1rem;
+            border-radius: 0.2rem;
+            padding: 5px;
+            border: solid white 1px;
+        }
+
+        & input {
+            text-align: center;
+        }
+    }
+
+    &__modal {
+        display: flex;
+        &__cross {
+            display: flex;
+            justify-content: end;
+            cursor: pointer;
+            & img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__text {
+        &__img {
+            width: 30px;
+            height: 30px;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+
+@media (max-width: 1400px) {
+    .editlistarPlatos {
+        margin: 0;
+    }
+
+    .plato {
+        flex-direction: column-reverse;
+
+        &__precio {
+            display: flex;
+
+            & button {
+                background-color: black;
+                color: white;
+                font-size: 1rem;
+                border-radius: 0.2rem;
+                padding: 5px;
+                border: solid white 1px;
+            }
+
+            & input {
+                text-align: center;
+            }
+        }
+
+        &__modal {
+            display: flex;
+        }
+
+        &__text {
+            display: flex;
+
+            &__img {
+                width: 30px;
+                height: 30px;
+                margin-left: 1rem;
+                cursor: pointer;
+
+            }
+
+            display: flex;
+            align-items: center;
+        }
+    }
+}

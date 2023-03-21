@@ -1,0 +1,29 @@
+.cardProduct {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    
+    & h3 {
+        line-height: 60px;
+    }
+    
+    & img {
+        cursor: pointer;
+        width: 259px;
+        height: 389px;
+        border-radius: 20px;
+    }
+
+}
+
+
+@media (max-width: 1024px) {
+    .cardProduct {
+        & h3 {
+            text-align: center;
+        }
+        margin: 1rem 0;
+    }
+}
