@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from "react"
-import { CartContext } from "../../../store/CartContext/CartContext"
-import Platos from "../ListarPlatosEditar/Platos"
+import Platos from "../ListarPlatos/Platos"
 
-const Bodega = ({ bodega }) => {
-    const { platos } = useContext(CartContext)
+const BodegaList = ({ bodega, platos }) => {
+
     return (
         <div>
             <div>
@@ -15,9 +13,10 @@ const Bodega = ({ bodega }) => {
                         return <Platos plato={plato} key={indice} />
                     }
                 }
-                
+
             })}
         </div>
     )
 }
-export default Bodega
+
+export default BodegaList

@@ -2,7 +2,8 @@ import './Desayunos&Meriendas.scss'
 import backgroundDetalle from '../../../asset/img/backgroundDetalle.jpg'
 import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../store/CartContext/CartContext'
-import { DesayunosMock } from '../../../store/Mock/MockUp'
+import logoCerchio from '../../../asset/img/logoCerchio.jpg'
+import back from '../../../asset/img/back.png'
 import ListarPlatos from '../ListarPlatos/ListarPlatos'
 import { Link } from 'react-router-dom'
 
@@ -46,11 +47,20 @@ const Desayunos = () => {
                 <div className="cena__container__img" >
                     <img src={backgroundDetalle} alt='detalle del fondo' />
                 </div>
-                <Link to="/menu" className='backMenu'>
-                    <span >
-                        Back
-                    </span>
-                </Link>
+                <div className='desayuno__top'>
+                    <Link to="/menu" className='backMenu'>
+                        <div className="back">
+                            <img src={back} alt='icono vegano' />
+                            <span >
+                                Volver
+                            </span>
+                        </div>
+
+                    </Link>
+                    <div className="desayuno__logo" >
+                        <img src={logoCerchio} alt='detalle del fondo' />
+                    </div>
+                </div>
                 <div className='cena__container__list'>
                     {
                         titulos.map((titulo, indice) => {

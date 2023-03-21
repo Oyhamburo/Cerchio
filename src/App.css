@@ -1,11 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  /* font-family: 'NeueMontrealLight 2'; */
+  font-family: montreal;
 }
 .main{
   background-color: #161616;
-  
 }
 
 .backMenu{
@@ -14,3 +13,18 @@
   font-size: 2rem;
   margin: 0rem 0 0 2rem ;
 }
+
+.back{
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.back img{
+  width: 30px;
+  height: 30px;
+}
+
+@font-face {
+  font-family: montreal;
+  src: url(./fonts/NeueMontreal-Light.ttf); }

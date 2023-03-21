@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../store/CartContext/CartContext'
 import './Cena.scss'
-import { CenaMock } from '../../../store/Mock/MockUp'
 import ListarPlatos from '../ListarPlatos/ListarPlatos'
-import backgroundDetalle from '../../../asset/img/backgroundDetalle.jpg'
+import logoCerchio from '../../../asset/img/logoCerchio.jpg'
+import back from '../../../asset/img/back.png'
 import { Link } from 'react-router-dom'
 
 const Cena = () => {
@@ -12,9 +12,16 @@ const Cena = () => {
 
     const [platos, setPlatos] = useState([])
     const [titulos, setTitulos] = useState([])
+    const [ejecutivo, setEjecutivo] = useState(0)
 
     const getMenu = async () => {
         const URL = 'http://localhost:8080/cena'
+        let menu = await fetch(URL)
+        return menu.json()
+    }
+
+    const getMenuDia = async () => {
+        const URL = `http://localhost:8080/dia/dia`
         let menu = await fetch(URL)
         return menu.json()
     }
@@ -33,19 +40,33 @@ const Cena = () => {
                     setTitulos(titulos)
                 }
             })
+
+        })
+        getMenuDia().then((data) => {
+            setEjecutivo(data.precio)
         })
     }, [])
 
     return (
         <section className="cena">
             <div className="cena__container">
-                <div className="cena__container__img" >
-                    <img src={backgroundDetalle} alt='detalle del fondo' />
+                <div className="cena__container__logo">
+                    <img src={logoCerchio} alt='logo' />
+                </div>
+                <div className='cena__container__portada'>
+                    <h2>Menú ejecutivo</h2>
+                    <p>-----------Mediodías de martes a viernes-----------</p>
+                    <h1>Plato del día & bebida</h1>
+                    <span>${ejecutivo}</span>
                 </div>
                 <Link to="/menu" className='backMenu'>
-                    <span >
-                        Back
+                    <div className="back">
+                        <img src={back} alt='icono vegano' />
+                        <span >
+                        Volver
                     </span>
+                    </div>
+
                 </Link>
                 <div className='cena__container__list'>
                     {

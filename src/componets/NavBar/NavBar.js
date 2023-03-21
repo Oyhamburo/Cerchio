@@ -1,11 +1,13 @@
 import './NavBar.scss'
 import portada from '../../asset/img/portada.jpg'
+import btnNavbar from '../../asset/img/btnNavbar.png'
 import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../store/CartContext/CartContext'
 
 const NavBar = () => {
     const [active, setActive] = useState('false')
+    const [btn, setBtn] = useState('false')
     const { carta } = useContext(CartContext)
 
 
@@ -15,6 +17,37 @@ const NavBar = () => {
                 <img src={portada} />
                 <h2>L'ECCELLENZA NEI SAPORI È IL PIATTO FORTE</h2>
             </article>
+            <div className='nav__btn' onClick={() => setBtn(!btn)}>
+                <img src={btnNavbar} />
+            </div>
+            {btn ? (
+                <article className='nav__mobile'>
+                    <Link className='nav__mobile__link '
+                        onClick={() => setActive('menu')}
+                        to="/menu"
+                    >
+                        <span >
+                            Menú
+                        </span>
+                    </Link>
+                    <Link className='nav__mobile__link'
+                        onClick={() => setActive('contacto')}
+                        to="/contacto"
+                    >
+                        <span >
+                            Contacto
+                        </span>
+                    </Link>
+                    <a className='nav__mobile__link' href='http://book.maxibook.com.ar/index.php?horde=16719459581003230182200006379878&ref=4'
+                        onClick={() => setActive('reservas')}
+                    >
+                        <span >
+                            Reservas
+                        </span>
+                    </a>
+                </article>
+            ) : ('')
+            }
             <article className='nav__bar'>
                 <Link className='nav__bar__link '
                     onClick={() => setActive('menu')}

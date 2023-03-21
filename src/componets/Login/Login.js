@@ -58,17 +58,17 @@ const Login = () => {
                 </div>
             ) : (
                 <div className='login__menu'>
-                    <Link className='nav__bar__link ' to="/login/desayuno">
+                    <Link className='login__menu__link ' to="/login/desayuno">
                         <span >
                             Desayunos y Meriendas
                         </span>
                     </Link>
-                    <Link className='nav__bar__link ' to="/login/cena">
+                    <Link className='login__menu__link ' to="/login/cena">
                         <span >
                             Almuerzo y Cena
                         </span>
                     </Link>
-                    <Link className='nav__bar__link ' to="/login/tragos">
+                    <Link className='login__menu__link ' to="/login/tragos">
                         <span >
                             Tragos
                         </span>

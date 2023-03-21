@@ -53,26 +53,6 @@ const ListarPlatosEditar = (props) => {
         })
         response.ok ? newRender(category) : console.error(response)
     }
-    // const handleSubmitAceptar = async (e) => {
-    //     e.preventDefault()
-    //     setShowModalAceptar(false)
-
-    //     const url = `http://localhost:8080/titulo/${titulo}`
-    //     const response = await fetch(url, {
-    //         method: "DELETE",
-    //         mode: "cors",
-    //         cache: "no-cache",
-    //         credentials: "same-origin",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         redirect: "follow",
-    //         referrerPolicy: "no-referrer"
-    //     })
-
-    //     response.ok ? newRender() : console.error(response)
-    //     newRender()
-    // }
 
 
     return (
@@ -97,19 +77,7 @@ const ListarPlatosEditar = (props) => {
                         </form>
                     </ReactModal>
                 </div>
-                {/* <div className='plato__modal'>
-                    <img className="plato__text__img" onClick={() => setShowModalAceptar(true)} src={deleteIcon} />
-                    <ReactModal
-                        isOpen={showModalAceptar}
-                        contentLabel="Minimal Modal Example"
-                    >
-                        <button onClick={() => setShowModalAceptar(false)}>Close Modal</button>
-                        <form className='formulario' onSubmit={handleSubmitAceptar}>
-                            <button name='cancelar' onClick={() => setShowModalAceptar(false)} >Cancelar</button>
-                            <button type="submit" name='aceptar' >Aceptar</button>
-                        </form>
-                    </ReactModal>
-                </div> */}
+
             </h2>
 
             <div className="editlistarPlatos__container">
