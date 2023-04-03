@@ -3,7 +3,7 @@ import { CartContext } from '../../store/CartContext/CartContext'
 import './FormNuevo.scss'
 
 const FormNuevo = ({ setShowModalPlato, titulo, category, bodega }) => {
-    const { newRender } = useContext(CartContext)
+    const { newRender,PUBLICURL } = useContext(CartContext)
     const [stateVegano, setStateVegano] = useState(false)
     const [stateBodega, setStateBodega] = useState(false)
     const [form, setForm] = useState({
@@ -34,7 +34,7 @@ const FormNuevo = ({ setShowModalPlato, titulo, category, bodega }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setShowModalPlato(false)
-        const url = `http://localhost:8080`
+        const url = PUBLICURL
         const response = await fetch(url, {
             method: "POST",
             mode: "cors",
@@ -55,10 +55,10 @@ const FormNuevo = ({ setShowModalPlato, titulo, category, bodega }) => {
         <form className='formulario' onSubmit={handleSubmit}>
             <input placeholder='nombre' type='text' onChange={handleInputChange} name='nombre' />
             <input placeholder='precio' type='number' onChange={handleInputChange} name='precio' />
-            {titulo == 'Vinos' ? (
+            {titulo === 'Vinos' ? (
                 <input placeholder='Bodega' type='text' onChange={handleInputChange} name='bodega' disabled={stateBodega} />
             ) : ''}
-            {titulo == 'Vinos' ? (
+            {titulo === 'Vinos' ? (
                 <label>Sin Bodega
                     <input type='checkbox' checked={stateBodega} onClick={() => setStateBodega(!stateBodega)} onChange={handleInputChange} name='bodega' />
                 </label>

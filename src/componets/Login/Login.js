@@ -4,7 +4,7 @@ import { CartContext } from '../../store/CartContext/CartContext'
 import './Login.scss'
 
 const Login = () => {
-    const { setCarta,setLogin,login } = useContext(CartContext)
+    const { setCarta,setLogin,login,PUBLICURL } = useContext(CartContext)
     setCarta(false)
     const [form, setForm] = useState({
         username: '',
@@ -20,7 +20,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const { username, password } = form
-        const url = `http://localhost:8080/login/${username}/${password}`
+        const url = `${PUBLICURL}login/${username}/${password}`
         const response = await fetch(url, {
             method: "GET",
             mode: "cors",

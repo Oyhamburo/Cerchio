@@ -9,7 +9,7 @@ import FormEdit from "../../FormEdit/FormEdit.js"
 import { CartContext } from '../../../store/CartContext/CartContext'
 const Platos = ({ plato }) => {
     // console.log('desde plato',plato)
-    const { newRender, bodegas, setBodegas } = useContext(CartContext)
+    const { newRender ,PUBLICURL } = useContext(CartContext)
     const { nombre, precio, descripcion, vegano, id, category, bodega } = plato
 
     const [showModal, setShowModal] = useState(false)
@@ -17,7 +17,7 @@ const Platos = ({ plato }) => {
     const handleSubmitAceptar = async (e) => {
         e.preventDefault()
         setShowModalAceptar(false)
-        const url = `http://localhost:8080/${id}`
+        const url = PUBLICURL+`${id}`
         const response = await fetch(url, {
             method: "DELETE",
             mode: "cors",

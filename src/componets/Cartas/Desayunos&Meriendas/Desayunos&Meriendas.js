@@ -8,14 +8,14 @@ import ListarPlatos from '../ListarPlatos/ListarPlatos'
 import { Link } from 'react-router-dom'
 
 const Desayunos = () => {
-    const { setCarta } = useContext(CartContext)
+    const { setCarta,PUBLICURL } = useContext(CartContext)
     setCarta(true)
 
     const [platos, setPlatos] = useState([])
     const [titulos, setTitulos] = useState([])
 
     const getMenu = async () => {
-        const URL = 'http://localhost:8080/desayuno'
+        const URL = PUBLICURL+'desayuno'
         let menu = await fetch(URL)
         return menu.json()
     }

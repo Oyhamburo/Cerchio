@@ -12,7 +12,7 @@ import Bodega from "../EditarTragos/Bodega"
 
 const ListarPlatosEditar = (props) => {
     const { titulo, platos } = props
-    const { newRender, bodegas, setBodegas } = useContext(CartContext)
+    const { newRender, bodegas, PUBLICURL } = useContext(CartContext)
     const [nuevoTitulo, setNuevoTitulo] = useState(titulo)
     const [showModal, setShowModal] = useState(false)
     const [showModalPlato, setShowModalPlato] = useState(false)
@@ -38,7 +38,7 @@ const ListarPlatosEditar = (props) => {
         e.preventDefault()
         setShowModal(false)
         let data = { titulo: nuevoTitulo }
-        const url = `http://localhost:8080/titulo/${titulo}`
+        const url = PUBLICURL+`titulo/${titulo}`
         const response = await fetch(url, {
             method: "PUT",
             mode: "cors",

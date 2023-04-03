@@ -7,7 +7,7 @@ import back from '../../../asset/img/back.png'
 import { Link } from 'react-router-dom'
 
 const Cena = () => {
-    const { setCarta } = useContext(CartContext)
+    const { setCarta,PUBLICURL } = useContext(CartContext)
     setCarta(true)
 
     const [platos, setPlatos] = useState([])
@@ -15,13 +15,13 @@ const Cena = () => {
     const [ejecutivo, setEjecutivo] = useState(0)
 
     const getMenu = async () => {
-        const URL = 'http://localhost:8080/cena'
+        const URL = PUBLICURL+'cena'
         let menu = await fetch(URL)
         return menu.json()
     }
 
     const getMenuDia = async () => {
-        const URL = `http://localhost:8080/dia/dia`
+        const URL = `${PUBLICURL}dia/dia`
         let menu = await fetch(URL)
         return menu.json()
     }

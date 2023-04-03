@@ -3,7 +3,7 @@ import { CartContext } from '../../store/CartContext/CartContext'
 import './FormEdit.scss'
 
 const FormEdit = ({ plato,setShowModal }) => {
-    const { newRender } = useContext(CartContext)
+    const { newRender,PUBLICURL } = useContext(CartContext)
     const { nombre, titulo, precio, descripcion, vegano, category,bodega } = plato
     const [stateVegano, setStateVegano] = useState(vegano)
     const [form, setForm] = useState({
@@ -16,7 +16,7 @@ const FormEdit = ({ plato,setShowModal }) => {
         titulo
     })
     const handleInputChange = (e) => {
-        if (e.target.name == 'vegano') {
+        if (e.target.name === 'vegano') {
             setForm(({
                 ...form,
                 [e.target.name]: e.target.checked
@@ -31,7 +31,7 @@ const FormEdit = ({ plato,setShowModal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setShowModal(false)
-        const url = `http://localhost:8080/${plato.id}`
+        const url = PUBLICURL+`${plato.id}`
         const response = await fetch(url, {
             method: "PUT",
             mode: "cors",

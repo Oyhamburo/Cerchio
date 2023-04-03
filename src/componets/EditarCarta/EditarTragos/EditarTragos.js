@@ -4,7 +4,7 @@ import ListarPlatosEditar from '../ListarPlatosEditar/ListarPlatosEditar'
 import Login from '../../Login/Login'
 import { Link } from 'react-router-dom'
 const EditarTragos = () => {
-    const { setCarta, titulos, platos, newRender, login, bodegas, setBodegas } = useContext(CartContext)
+    const { setCarta, titulos, platos, newRender, login, PUBLICURL } = useContext(CartContext)
     setCarta(true)
     let array = []
 
@@ -23,7 +23,7 @@ const EditarTragos = () => {
             bodega: "",
             titulo: "Nuevo Titulo"
         }
-        const url = `http://localhost:8080/`
+        const url = PUBLICURL
         const response = await fetch(url, {
             method: "POST",
             mode: "cors",

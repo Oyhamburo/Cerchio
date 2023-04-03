@@ -10,9 +10,11 @@ const CartProvider = ({ children }) => {
     const [login, setLogin] = useState(false)
     const [bodegas, setBodegas] = useState([])
     const arrayTest = []
+    let PUBLICURL = window.location.origin
+    PUBLICURL += /api/
 
     const getMenu = async ruta => {
-        const URL = `http://localhost:8080/${ruta}`
+        const URL = `${PUBLICURL}${ruta}`
         let menu = await fetch(URL)
         return menu.json()
     }
@@ -57,7 +59,8 @@ const CartProvider = ({ children }) => {
         setLogin,
         bodegas,
         setBodegas,
-        arrayTest
+        arrayTest,
+        PUBLICURL
     }
     return (
         <CartContext.Provider value={data}>

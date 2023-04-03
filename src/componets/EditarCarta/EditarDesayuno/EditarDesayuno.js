@@ -5,7 +5,7 @@ import Login from '../../Login/Login'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../../store/CartContext/CartContext'
 const EditarDesayuno = () => {
-    const { setCarta, titulos, platos, newRender, login } = useContext(CartContext)
+    const { setCarta, titulos, platos, newRender, login ,PUBLICURL} = useContext(CartContext)
     setCarta(true)
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const EditarDesayuno = () => {
             category: "desayuno",
             titulo: "Nuevo Titulo"
         }
-        const url = `http://localhost:8080/`
+        const url = PUBLICURL
         const response = await fetch(url, {
             method: "POST",
             mode: "cors",

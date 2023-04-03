@@ -9,7 +9,7 @@ import ReactModal from 'react-modal'
 import Login from '../../Login/Login'
 import { Link } from 'react-router-dom'
 const EditarCena = () => {
-    const { setCarta, titulos, platos, newRender, login } = useContext(CartContext)
+    const { setCarta, titulos, platos, newRender, login,PUBLICURL } = useContext(CartContext)
     setCarta(true)
 
     const [ejecutivo, setEjecutivo] = useState(0)
@@ -23,7 +23,7 @@ const EditarCena = () => {
     }, [])
 
     const getMenu = async ruta => {
-        const URL = `http://localhost:8080/dia/dia`
+        const URL = PUBLICURL+`dia/dia`
         let menu = await fetch(URL)
         return menu.json()
     }
@@ -47,7 +47,7 @@ const EditarCena = () => {
             category: "cena",
             titulo: "Nuevo Titulo"
         }
-        const url = `http://localhost:8080/`
+        const url = PUBLICURL
         const response = await fetch(url, {
             method: "POST",
             mode: "cors",
@@ -73,7 +73,7 @@ const EditarCena = () => {
             id: 'dia',
             precio: ejecutivo
         }
-        const url = `http://localhost:8080/dia/dia`
+        const url = PUBLICURL+`dia/dia`
         const response = await fetch(url, {
             method: "PUT",
             mode: "cors",
