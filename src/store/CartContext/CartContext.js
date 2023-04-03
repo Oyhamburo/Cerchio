@@ -10,8 +10,8 @@ const CartProvider = ({ children }) => {
     const [login, setLogin] = useState(false)
     const [bodegas, setBodegas] = useState([])
     const arrayTest = []
-    let PUBLICURL = window.location.origin
-    PUBLICURL += /api/
+    // let PUBLICURL = `http://localhost:8080/`
+    let PUBLICURL = `https://api.fhdev.com.ar/cerchio/`
 
     const getMenu = async ruta => {
         const URL = `${PUBLICURL}${ruta}`

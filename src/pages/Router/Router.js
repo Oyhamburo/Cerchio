@@ -34,6 +34,7 @@ const Router = () => {
                     <Route path='/login/cena' element={<EditarCena />} />
                     <Route path='/login/desayuno' element={<EditarDesayuno />} />
                     <Route path='/login/tragos' element={<EditarTragos />} />
+                    <Route path="*" element={<Home />} />
                 </Routes>
                 {!carta ? <Footer /> : ''}
             </main>

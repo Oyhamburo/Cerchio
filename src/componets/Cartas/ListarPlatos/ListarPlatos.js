@@ -8,7 +8,6 @@ const ListarPlatos = (props) => {
     const { titulo, platos } = props
     const { setCarta,bodegas } = useContext(CartContext)
     setCarta(true)
-    console.log(bodegas)
     return (
         <div className="listarPlatos">
             <h2>
